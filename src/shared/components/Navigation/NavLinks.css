@@ -1,0 +1,130 @@
+.nav-links, .nav-links-mobile {
+    list-style: none;
+    padding: 0;
+    height: 100%;
+  
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    margin: 1rem;
+    font-size: 3vw;
+    font-family: "Neucha", cursive;
+  }
+  
+  .nav-links li, .nav-links-mobile li {
+    margin: 0;
+    border: 0;
+    font: inherit;
+    letter-spacing: 5px;
+  }
+  
+  .nav-links a, .nav-links-mobile a{
+    border: 1px solid transparent;
+    border-radius: 15px 0px 0px 15px;
+    color: black;
+    text-decoration: none;
+    padding: 0.3rem;
+    font-size: 2vw;
+    vertical-align: baseline;
+    line-height: 1.8;
+  }
+  
+  .nav-links-mobile a{
+    border: 1px solid transparent;
+    border-radius: 15px 0px 0px 15px;
+    text-decoration: none;
+    padding: 0.3rem;
+    font-size: 6vw;
+    vertical-align: baseline;
+    line-height: 1.8;
+  }
+  
+  .nav-links li.selected a, 
+  .nav-links-mobile li.selected a {
+    color: black;
+    text-decoration: underline;
+  
+  }
+  
+  .nav-links a:hover,
+  .nav-links a:active,
+  .nav-links a.active,
+  .nav-links-mobile a:hover, 
+  .nav-links-mobile a:active, 
+  .nav-links-mobile a.active {
+    text-decoration: underline;
+    color: black;
+    text-decoration-color: #dddddd;
+    cursor: pointer;
+    transition: all .5s ease-in;
+  }
+  
+  .nav-links button, 
+  .nav-links-mobile button {
+    cursor: pointer;
+    background: transparent;
+    color: black;
+    padding: 0.5rem;
+    font: inherit;
+  }
+  
+  .nav-links button:focus,
+  .nav-links-mobile button:focus {
+    outline: none;
+  }
+  
+  .nav-links button:hover,
+  .nav-links button:active,
+  .nav-links-mobile button:hover,
+  .nav-links-mobile button:active {
+    color: black;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .nav-links, .nav-links-mobile {
+      flex-direction: column;
+    }
+  
+    .nav-links li, .nav-links-mobile li {
+      margin: 1rem;
+      margin: 0;
+      border: 0;
+      font: inherit;
+    }
+  
+    .nav-links a,
+    .nav-links-mobile a {
+      color: black;
+      text-decoration: none;
+    }
+  
+    .nav-links button,
+    .nav-links-mobile button {
+      color: black;
+      background: transparent;
+    }
+  
+    .nav-links button:hover,
+    .nav-links button:active,
+    .nav-links-mobile button:hover,
+    .nav-links-mobile button:active {
+      color: black;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  
+  /* This adjusts the styling for an Iphone X */
+  @media screen and (max-width: 375px) {
+    .nav-links {
+      position: absolute;
+      top: -15vh;
+      height: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 799px){
+    .nav-links{
+      display: none;
+    }
+  }

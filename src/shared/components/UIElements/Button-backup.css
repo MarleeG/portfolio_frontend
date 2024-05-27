@@ -1,0 +1,27 @@
+button {
+    background-color: transparent;
+    width: 70%;
+    margin: 10px;
+    border-radius: 10px;
+    top: 50%;
+    height: 70px;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+  
+.view-project {
+border: 1px solid #85cefb;
+}
+
+.details{
+    border: 1px solid #fbe9f0;
+}
+
+.about-btn-text{
+    font-size: 3vw;
+}
+
+@media only screen and (max-width: 500px){
+    .about-btn-text{
+        font-size: 6vw;
+    }
+}

@@ -1,0 +1,96 @@
+.main-navigation__title{
+    font-size: 3.5vw;
+    max-width: 100%;
+    display: block;
+    padding-bottom: 1vw;
+  }
+  
+  .main-navigation__title a{
+    text-decoration: none;
+    color: black;
+    line-height: 0.8;
+    letter-spacing: -0.1vw;
+    font-weight: bold;
+    margin-bottom: 32px;
+  
+    /* This will only allow one word per line */
+    width: min-intrinsic;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    display: table-caption;
+    display: -ms-grid;
+    -ms-grid-columns: min-content;
+  }
+  
+  h1.main-navigation__mobile-title a{
+    text-decoration: none;
+    color: black;
+    line-height: 0.8;
+    letter-spacing: -0.1vw;
+    font-weight: bold;
+    margin-bottom: 32px;
+    font-size: 6vw;
+  }
+  
+  /* :first-line wil target the first line in this element which in my case is Marlee as I made it it's own line */
+  .main-navigation__title a::first-line, .main-navigation__mobile-drawer-nav a::first-line {
+    letter-spacing: -0.2vw;
+  }
+  
+  .main-navigation__title_in_header{
+    text-align: center;
+    font-size: 5vw;
+  }
+  
+  .main-navigation__title_in_header a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    position: relative;
+    top: 5px;
+  
+    line-height: 0.8;
+    letter-spacing: -0.3vw;
+  }
+  
+  .main-navigation__menu-btn {
+    width: 2rem;
+    height: 1.7rem;
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 2rem;
+    cursor: pointer;
+  
+    position: absolute;
+    right: 2px;
+  }
+  
+  .main-navigation__menu-btn span {
+    display: block;
+    height: 2.5px;
+    background: black;
+    width: 20px;
+  }
+  
+  .main-navigation__header-nav {
+    display: none;
+  }
+  
+  .main-navigation__drawer-nav, .main-navigation__mobile-drawer-nav {
+    height: 100%;
+    margin-top: 32px;
+  }
+  
+  @media screen and (min-width: 801px) {
+    .main-navigation__menu-btn {
+      display: none;
+    }
+  
+    .main-navigation__header-nav {
+      display: block;
+    }
+  }

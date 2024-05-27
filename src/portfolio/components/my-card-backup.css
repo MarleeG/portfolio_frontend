@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&family=Sedgwick+Ave&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Homemade+Apple&family=Sacramento&display=swap");
+
+.container {
+  height: 20vh;
+  width: 20vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0.5vw 0vw;
+  /* border: 2px solid green; */
+}
+
+h2.card_primary_h2 {
+  color: black;
+  /* font-family: "Open Sans Condensed", sans-serif; */
+  font-size: 20px;
+  font-family: "Cedarville Cursive", cursive;
+  margin-top: 1vh;
+  margin-left: 1.4vh;
+  margin-bottom: 2px;
+  clear: both;
+  position: absolute;
+}
+
+.card__span {
+  height: 1px;
+  width: 95%;
+  background: #989797;
+  float: left;
+  top: 4vh;
+  left: 0.5vh;
+  position: absolute;
+}
+
+.item {
+  color: #000;
+  padding: 0px 0;
+  margin: 0%;
+  flex: 1 250px;
+  height: auto;
+  text-align: center;
+  width: 100%;
+
+  background: #e3e3e3;
+}
+
+.item {
+  position: relative;
+}
+
+p.card__description {
+  font-style: italic;
+  padding: 5px;
+  position: absolute;
+  text-align: left;
+  top: 4.5vh;
+  line-height: 4vh;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+span.card__plus-icon {
+  font-size: 50px;
+  width: 3vw;
+  padding: 1vh;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+span.card__plus-icon:hover {
+  -ms-transform: rotate(315deg); /* IE 9 */
+  transform: rotate(315deg);
+  transition-duration: 0.1s;
+}
+
+.container:hover h2.card_primary_h2 {
+  color: #989797;
+}
+
+.container:hover p.card__description {
+  color: #989797;
+}
+.container:hover span.card__span {
+  background-color:   #dddddd;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  transition: height 0.2s;
+
+  overflow: hidden;
+  height: 0;
+  z-index: 2;
+  /* blue */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container:hover .overlay {
+  height: 100%;
+  /* blue */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container:hover div.card__border_div {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 20vw;
+  height: auto;
+
+  position: absolute;
+  bottom: 0;
+  border: none;
+}
+
+.container:hover h3 {
+  display: block;
+}
+
+.container:hover h2.card__secondary_h2 {
+  display: block;
+  font-family: "Sacramento", cursive;
+  font-size: 25px;
+}
+
+div.card__border_div > h3 {
+  color: black;
+  /* font-family: 'Sedgwick Ave', cursive; */
+  display: none;
+  font-size: 14px;
+  padding: 4px;
+}
+
+h2.card__secondary_h2 {
+  display: none;
+}
+
+
+@media screen and (min-width: 1201px){
+  span.card__plus-icon {
+    /* border-radius: 50%; */
+    width: 20%;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .container {
+    height: 24vh;
+    width: 25vw;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .container {
+    height: 30vh;
+    width: 33vw;
+    margin-top: 5vh;
+
+  }
+
+  span.card__plus-icon {
+    /* font-size: 40px;
+    padding: 2vh;
+    border-radius: 50%;
+    */
+  }
+}
+
+@media screen and (max-width: 700px){
+  .container {
+    height: 20vh;
+    width: 100%;
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container:hover div.card__border_div {
+    height: 0.5vh;
+  }
+
+  .container {
+    height: 25vh;
+    width: 100%;
+  }
+
+  span.card__span {
+    top: 6vh;
+  }
+
+  p.card__description {
+    top: 8vh;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+
+@media screen and (max-width: 499px) {
+  h2 {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  span.card__plus-icon {
+    width: 30%
+  }
+}

@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap");
+/* font-family: "Open Sans Condensed", sans-serif; */
+
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+/* font-family: "Neucha", cursive; */
+
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+/* font-family: 'Homemade Apple', cursive; */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* font-family: 'Roboto', sans-serif; */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 10px;
+}
+
+.font-neucha {
+  font-family: "Neucha", cursive;
+}
+
+.font-apple {
+  font-family: "Homemade Apple", cursive;
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.font-sans {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.page {
+  margin-left: 21vw;
+  display: block;
+  width: 79vw;
+  height: 100vh;
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL */
+.modal-enter {
+  transform: translateY(-10rem);
+  opacity: 0;
+}
+
+.modal-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.modal-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-exit-active {
+  transform: translateY(-10rem);
+  opacity: 0;
+  transition: all 200ms;
+}
+
+@media screen and (max-width: 330px) {
+  #drawer-hook,
+  #root,
+  #backdrop-hook,
+  #modal-hook,
+  #about-modal-hook {
+    display: none;
+  }
+
+  div#application-msg {
+    color: red;
+    flex-direction: column;
+    display: flex;
+    margin: 40vh 5vw 0;
+    font-weight: bolder;
+    border: 1px solid red;
+    padding: 4vw;
+    font-family: "Open Sans Condensed", sans-serif;
+  }
+
+  #application-msg:before {
+    content: "Please use a device with a larger display. Your width is not supported.";
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .page {
+    /* centers page  */
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    width: 100%;
+  }
+}

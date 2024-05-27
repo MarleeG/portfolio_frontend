@@ -1,0 +1,119 @@
+ul{
+    padding: 0px;
+  }
+  .modal__container {
+    background-color: white;
+    z-index: 200;
+    position: fixed;
+    top: 22vh;
+    left: 10%;
+    width: 80%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .modal__project-info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+  
+  .modal__project-description-wrap,
+  .modal__project-links {
+    width: 42%;
+  }
+  
+  
+  .modal__project-tech-wrap {
+    width: 16%;
+  }
+  .modal__project-description-wrap,
+  .modal__project-tech-wrap {
+    /* border-right: 1px solid #dddddd; */
+  }
+  
+  .modal__project-tech-wrap > ul > div.tech-list-wrapper > li {
+    list-style: none;
+  }
+  
+  .modal__project-links {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .modal__project-name-wrap {
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  h1.modal__project-name {
+    font-size: 30px;
+    padding: 5px 0px 0px;
+    margin: 10px 0px 0px;
+    width: 100%;
+  }
+  
+  p.modal__project-description {
+    padding: 5px;
+    font-size: 20px;
+  }
+  
+  .modal__project-collab{
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  
+  @media screen and (max-width: 700px) {
+    .modal__container {
+      border-width: 30px !important;
+      position: absolute;
+      top: 2.5vh;
+    }
+  
+  
+    .modal__project-info {
+      flex-direction: row ;
+      flex-wrap: wrap;
+      width: 100%;
+      padding-bottom: 10px;
+    }
+  
+    .modal__project-description-wrap {
+      width: 100%;
+    }
+  
+    .modal__project-links,
+    .modal__project-tech-wrap {
+      width: 50%;
+    }
+}
+  
+@media screen and (max-width: 525px) {
+    .modal__container {
+        border-width: 30px !important;
+        position: absolute;
+        top: 2.5vh;
+    }
+
+    .modal__project-info {
+        flex-direction: row ;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .modal__project-description-wrap {
+        width: 100%;
+    }
+
+    .modal__project-links,
+    .modal__project-tech-wrap {
+        width: 50%;
+    }
+}

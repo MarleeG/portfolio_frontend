@@ -1,0 +1,81 @@
+.home__wrapper {
+    background-color: #ffd9de;
+    background-image: linear-gradient(
+      300deg,
+      #c8cbf1,
+      #fffef0,
+      #fbe9f0,
+      #85cefb,
+      #ebe5cf
+    );
+  
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 120vw auto;
+  
+    width: 70vw;
+    height: 80vh;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+  
+.home__text {
+    flex-direction: column;
+    display: flex;
+}
+  
+.home__wrapper h1 {
+    font-weight: bolder;
+    margin: 10px 0;
+    letter-spacing: 0vw;
+    font-size: 6vw;
+}
+
+.home__wrapper p {
+    color: black;
+    font-weight: bolder;
+    font-size: 1.3vw;
+}
+  
+@media screen and (max-width: 830px) {
+    .home__wrapper {
+        background-size: 175vw auto;
+    }
+
+    .home__wrapper p {
+        font-size: 1.5vw;
+    }
+}
+  
+@media screen and (max-width: 700px) {
+    .home__wrapper {
+        height: 65vh;
+        background-size: 175vw auto;
+    }
+}
+  
+@media screen and (max-width: 600px) {
+    .home__wrapper {
+        height: 50vh;
+        background-size: 175vw auto;
+    }
+}
+  
+@media screen and (max-width: 500px) {
+    .home__wrapper {
+        background-size: 175vw auto;
+    }
+}
+  
+@media screen and (max-width: 450px) {
+    .home__wrapper {
+        height: 40vh;
+        background-size: 150vw auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .home__wrapper {
+        height: 65vh;
+        background-size: 215vw auto;
+    }
+}
