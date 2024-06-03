@@ -77,5 +77,6 @@
     .home__wrapper {
         height: 65vh;
         background-size: 215vw auto;
+        overscroll-behavior: none;
     }
 }
