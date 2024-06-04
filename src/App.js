@@ -54,7 +54,7 @@ const App = () => {
         <MainNavigation />
 
         <main>
-        <h1>STILL HERE</h1>
+        {/* <h1>STILL HERE</h1> */}
           <Suspense
             fallback={
               <div className="page center">

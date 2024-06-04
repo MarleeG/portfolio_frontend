@@ -108,7 +108,7 @@ body {
     /* centers page  */
     margin-left: auto;
     margin-right: auto;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
   }
 }
