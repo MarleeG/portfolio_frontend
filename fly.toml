@@ -2,11 +2,11 @@ app = "marlee-gerard-portfolio"
 primary_region = "iad"
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = "Dockerfile"   # <-- forces Docker, skips Node buildpack
 
 [[services]]
   protocol = "tcp"
-  internal_port = 80             # MUST be 80 for nginx image
+  internal_port = 80
 
   [[services.ports]]
     handlers = ["http"]
