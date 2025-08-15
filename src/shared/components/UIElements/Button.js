@@ -5,7 +5,11 @@ import "./Button.css";
 const Button = (props) => {
   // console.log(props);
   return (
-    <a href={props.href && props.href} target={props.target ? "_blank" : ""}>
+    <a 
+      href={props.href && props.href} 
+      target={props.target ? "_blank" : ""}
+      rel={props.target ? "noreferrer" : undefined}
+    >
       <button
         type={props.type || "button"}
         className={`button font-neucha ${props.classes}`}

@@ -11,7 +11,7 @@ const images = [
     title: "LinkedIn",
     alt: "LinkedIn",
     link: "https://www.linkedin.com/in/marlee-g-b27505ab/",
-    msg: "Let's link!"
+    msg: "Let's connect!"
   },
   {
     id: 2,

@@ -9,16 +9,17 @@ const MyCard = (props) => {
       <div className="item">
         {IMG_SRC && <img src={IMG_SRC} alt={props.data.name} className="card__project-img"/>}
 
-        <div className="overlay center">
-          <span
-            className="card__plus-icon"
-            onClick={() => {
+        <div 
+          className="overlay center"
+          onClick={() => {
               props.handleModalOpen();
               props.getProjectById(props.data._id);
             }}
+        >
+          {/* <span
+            className="card__plus-icon"
           >
-            +
-          </span>
+          </span> */}
         </div>
       </div>
     </div>
