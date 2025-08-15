@@ -1,0 +1,16 @@
+app = "portfolio-frontend-zwjkpa"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 80             # MUST be 80 for nginx image
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+  [[services.ports]]
+    handlers = ["tls","http"]
+    port = 443
