@@ -1,16 +1,27 @@
-app = "marlee-gerard-portfolio"
-primary_region = "iad"
+# fly.toml app configuration file generated for marlee-gerard-portfolio on 2025-08-15T16:08:35-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'marlee-gerard-portfolio'
+primary_region = 'iad'
 
 [build]
-  dockerfile = "Dockerfile"   # <-- forces Docker, skips Node buildpack
+  dockerfile = 'Dockerfile'
 
 [[services]]
-  protocol = "tcp"
+  protocol = 'tcp'
   internal_port = 80
 
   [[services.ports]]
-    handlers = ["http"]
     port = 80
+    handlers = ['http']
+
   [[services.ports]]
-    handlers = ["tls","http"]
     port = 443
+    handlers = ['tls', 'http']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
