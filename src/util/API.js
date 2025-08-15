@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_HOST = "https://backendportfolio.mg4.xyz";
+const API_HOST = "https://portfolio-backend-xnepoa.fly.dev";
 // const API_HOST = "http://localhost:8080";
 
 const API = {
