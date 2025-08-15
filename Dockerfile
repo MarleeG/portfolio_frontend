@@ -18,7 +18,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Vite output is /dist; CRA output is /build
 # --- Vite (default):
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 # --- CRA (if you use CRA, comment the line above and uncomment this):
 # COPY --from=build /app/build /usr/share/nginx/html
 
