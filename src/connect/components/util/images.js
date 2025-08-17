@@ -24,7 +24,7 @@ const images = [
     id: 3,
     title: "Résumé",
     alt: "Résumé",
-    link: "https://docs.google.com/document/d/1fzMnQuwS3y09NAAIXthwc9Pb6gdRw8jTVYpO3dFjfws/edit?usp=sharing",
+    link: "https://docs.google.com/document/d/1BEjgQtR7x0zxiT6J7TH_22Q_suyh5sSZH-SyViszZxI/edit?usp=sharing",
     msg: 'View résumé'
   },
 ];
