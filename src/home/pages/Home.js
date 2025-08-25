@@ -7,7 +7,7 @@ const Home = props => {
     <div className="page center home__container">
       <div className="home__wrapper center">
         <div className="home__text">
-          <h1 className={`animated fadeIn font-neucha`}>Software Engineer</h1>
+          <h1 className={`animated fadeIn font-neucha`}>Software Engineer II</h1>
           {/* delay-1s */}
           <p
             className='animated fadeIn font-apple'
