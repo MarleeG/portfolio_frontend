@@ -19,6 +19,11 @@ ul{
     flex-direction: row;
     margin-top: 20px;
   }
+
+  .modal__project-alert-message{
+    width: 80%;
+    margin: 1rem auto;
+  }
   
   .modal__project-description-wrap,
   .modal__project-links {

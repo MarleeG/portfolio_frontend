@@ -1,7 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
-import {randomColorGenerator} from '../util/ui-helper'
+import { Alert } from "react-bootstrap";
+import ReactDOM from "react-dom";
+
+import { randomColorGenerator } from "../util/ui-helper";
 import Backdrop from "./Backdrop";
 import Button from "./Button";
 
@@ -14,7 +16,8 @@ const ModalOverlay = (props) => {
     technologies,
     deployedLink,
     githubLink,
-    projectType
+    projectType,
+    projectMessage,
   } = props.project;
 
   const [color, setColor] = useState("black");
@@ -56,7 +59,6 @@ const ModalOverlay = (props) => {
   };
 
   const notHovering = (name) => {
-
     if (name === "btn-one") {
       // setIsBtnHoverOne(false);
       setBorderStyleOne("solid");
@@ -86,6 +88,15 @@ const ModalOverlay = (props) => {
           <h1 className="modal__project-name font-neucha">{name}</h1>
         </div>
 
+        {projectMessage && (
+          <Alert
+            className="center modal__project-alert-message"
+            variant="warning"
+          >
+            {projectMessage}
+          </Alert>
+        )}
+
         {/* <br /> */}
         <div className="modal__project-info">
           <div className="modal__project-description-wrap font-sans center">
@@ -96,7 +107,7 @@ const ModalOverlay = (props) => {
             <div className="modal__project-tech-wrap font-sans">
               <ul>
                 {technologies.map((tech, idx) => (
-                  <div className='center tech-list-wrapper' key={idx}>
+                  <div className="center tech-list-wrapper" key={idx}>
                     <li key={idx}>{tech}</li>
                   </div>
                 ))}

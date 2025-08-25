@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect, useCallback } from "react";
+import { Alert } from "react-bootstrap";
 
 import MyCard from "../components/my-card";
 import Modal from "../../shared/components/UIElements/Modal";
@@ -6,7 +7,7 @@ import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import API from "../../util/API";
 
 import "./Portfolio.css";
-import { Alert } from "react-bootstrap";
+
 
 let projects = [];
 const Portfolio = (props) => {
@@ -82,10 +83,10 @@ const Portfolio = (props) => {
           {/* Project column */}
           <div className="portfolio__right portfolio__column">
             <div className="portfolio__wrapper-right">
-            {
+            {/* {
               allProjects.length > 0 && 
               <Alert className="center animated fadeInRightBig slow-2s" variant="warning">Heroku based projects may not load due to recent updates on the platform.</Alert>
-            }
+            } */}
               {/* This renders projects */}
               <div className="portfolio__projects-list">
               
@@ -100,6 +101,7 @@ const Portfolio = (props) => {
                         handleModalOpen={handleModalOpen}
                         getProjectById={getProjectById}
                         s3Images={s3ImageURLs}
+                        projectMessage={project.projectMessage}
                       />
                     );
                   })}
