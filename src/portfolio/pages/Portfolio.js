@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect, useCallback } from "react";
-import { Alert } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
 
 import MyCard from "../components/my-card";
 import Modal from "../../shared/components/UIElements/Modal";
@@ -83,10 +83,10 @@ const Portfolio = (props) => {
           {/* Project column */}
           <div className="portfolio__right portfolio__column">
             <div className="portfolio__wrapper-right">
-            {/* {
+            {
               allProjects.length > 0 && 
-              <Alert className="center animated fadeInRightBig slow-2s" variant="warning">Heroku based projects may not load due to recent updates on the platform.</Alert>
-            } */}
+              <Alert className="center animated fadeInRightBig slow-2s" variant="light">Several projects were originally deployed on Heroku. Due to recent platform changes, some live demos may not load, but all source code is available on GitHub.</Alert>
+            }
               {/* This renders projects */}
               <div className="portfolio__projects-list">
               

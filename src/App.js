@@ -9,6 +9,7 @@ import {
   Switch,
 } from "react-router-dom";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {ProjectContext} from "./context/auth-context";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
