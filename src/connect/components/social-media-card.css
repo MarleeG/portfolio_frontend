@@ -12,6 +12,10 @@ a:hover {
   color: black;
 }
 
+a{
+  text-decoration: none;
+}
+
 h2.smc__header {
   color: black;
   letter-spacing: 10px;
