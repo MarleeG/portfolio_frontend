@@ -130,7 +130,7 @@ h1.main-navigation__mobile-title a:active {
 .mobile-drawer-toggle {
   position: absolute;
   left: 15px;
-  bottom: 7px;
+  bottom: 17px; /* raised to avoid scrollbar overlap */
   z-index: 1001;
   display: flex;
   align-items: flex-start;
@@ -143,7 +143,7 @@ h1.main-navigation__mobile-title a:active {
   position: absolute;
   left: 0.8rem; /* align with nav link inner padding */
   right: 0.8rem; /* keep within drawer */
-  bottom: 12px;
+  bottom: 22px; /* raised to avoid scrollbar overlap */
   margin: 0;
   display: flex;
   align-items: center;
