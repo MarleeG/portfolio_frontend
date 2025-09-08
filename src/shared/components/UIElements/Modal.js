@@ -47,12 +47,10 @@ const ModalOverlay = (props) => {
 
   const isHovering = (name) => {
     if (name === "btn-one") {
-      // setIsBtnHoverOne(true);
       setBorderStyleOne("solid");
       setAnimateOne("headShake");
     } else {
       // name == btn-two
-      // setIsBtnHoverTwo(true);
       setBorderStyleTwo("solid");
       setAnimateTwo("headShake");
     }
@@ -60,11 +58,9 @@ const ModalOverlay = (props) => {
 
   const notHovering = (name) => {
     if (name === "btn-one") {
-      // setIsBtnHoverOne(false);
       setBorderStyleOne("solid");
       setAnimateOne("");
     } else {
-      // setIsBtnHoverTwo(false);
       setBorderStyleTwo("solid");
       setAnimateTwo("");
     }
