@@ -1,15 +1,22 @@
 .smc__container {
-  background-color: #f8f7f8;
+  background-color: var(--tile);
   margin: 0.7vw;
   width: 20vw;
   height: 20vw;
   border-radius: 14px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
   position: relative;
+}
+
+/* Dark theme: specific card background for Connect page */
+[data-theme="dark"] .smc__container {
+  background-color: #23262C;
 }
 
 a:hover {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 a{
@@ -17,14 +24,14 @@ a{
 }
 
 h2.smc__header {
-  color: black;
+  color: var(--text);
   letter-spacing: 10px;
   padding: 10px;
 }
 
 img {
   padding: 0.5vw;
-  width: 6vw;
+  width: 12vw;
 }
 
 .smc__overlay {
@@ -53,7 +60,7 @@ img {
 }
 
 .smc__overlay-text {
-  color: black;
+  color: var(--text);
   letter-spacing: 5px;
   position: absolute;
   top: 50%;
@@ -93,7 +100,8 @@ img {
   }
 
   h2.smc__header {
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: 600;
   }
 }
 
@@ -106,6 +114,29 @@ img {
 
   h2.smc__header,
   h2.smc__overlay-text {
-    font-size: 15px;
+    font-size: 17px;
+    font-weight: 600;
   }
+}
+
+/* General mobile sizing and emphasis */
+@media only screen and (max-width: 799px) {
+  h2.smc__header,
+  .smc__overlay-text {
+    font-weight: 600;
+  }
+}
+
+/* Desktop dark theme: match portfolio overlay (semi-transparent black) */
+@media (hover: hover) and (pointer: fine) {
+  [data-theme="dark"] .smc__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Disable hover effects on touch/mobile to avoid unintended animations */
+@media (hover: none), only screen and (max-width: 799px) {
+  .smc__container:hover .smc__overlay { height: 0; }
+  .smc__container:hover img { opacity: 1; }
+  .smc__container:hover h2.smc__header { display: block; }
 }

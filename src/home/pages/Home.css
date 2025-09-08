@@ -38,12 +38,28 @@
     margin: 10px 0;
     letter-spacing: 0vw;
     font-size: 6vw;
+    color: var(--text);
 }
 
 .home__wrapper p {
-    color: black;
+    color: var(--text);
     font-weight: bolder;
     font-size: 1.3vw;
+}
+
+/* Dark theme gradient override */
+[data-theme="dark"] .home__wrapper {
+    /* Multicolor blob gradient: red, magenta, green, yellow, blue, deep purple */
+    background-image:
+      radial-gradient(120% 90% at 10% 10%, rgba(0,0,0,0.40), transparent 60%),
+      radial-gradient(120% 90% at 90% 90%, rgba(0,0,0,0.40), transparent 60%),
+      linear-gradient(135deg, #e11d48 0%, #6d28d9 55%, #1d4ed8 100%);
+    background-size: cover; /* override light-mode sizing */
+}
+
+[data-theme="dark"] .home__wrapper h1,
+[data-theme="dark"] .home__wrapper p {
+    color: var(--home-dark-text);
 }
   
 @media screen and (max-width: 830px) {
@@ -52,7 +68,7 @@
     }
 
     .home__wrapper p {
-        font-size: 1.5vw;
+        font-size: 2.6vw;
     }
 }
   
@@ -61,6 +77,8 @@
         height: 65vh;
         background-size: 175vw auto;
     }
+    .home__wrapper h1 { font-size: 8vw; white-space: nowrap; }
+    .home__wrapper p { font-size: 2.4vw; }
 }
   
 @media screen and (max-width: 600px) {
@@ -68,12 +86,16 @@
         height: 50vh;
         background-size: 175vw auto;
     }
+    .home__wrapper h1 { font-size: 7.5vw; white-space: nowrap; }
+    .home__wrapper p { font-size: 2.2vw; }
 }
   
 @media screen and (max-width: 500px) {
     .home__wrapper {
         background-size: 175vw auto;
     }
+    .home__wrapper h1 { font-size: 7vw; white-space: nowrap; }
+    .home__wrapper p { font-size: 2vw; }
 }
   
 @media screen and (max-width: 450px) {
@@ -81,6 +103,8 @@
         height: 40vh;
         background-size: 150vw auto;
     }
+    .home__wrapper h1 { font-size: 6.8vw; white-space: nowrap; }
+    .home__wrapper p { font-size: 1.9vw; }
 }
 
 @media screen and (max-width: 400px) {
@@ -88,4 +112,6 @@
         height: 65vh;
         background-size: 215vw auto;
     }
+    .home__wrapper h1 { font-size: 6.5vw; white-space: nowrap; }
+    .home__wrapper p { font-size: 1.8vw; }
 }

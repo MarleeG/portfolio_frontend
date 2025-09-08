@@ -1,7 +1,8 @@
-import React, { useState, useEffect, Fragment, useCallback } from "react";
+import React, { useState, useEffect, Fragment, useCallback, useContext } from "react";
 
 import SocialMediaCard from "../components/social-media-card";
 import { getAllImages } from "../components/util/images";
+import { ThemeContext } from "../../context/theme-context";
 
 import "./Connect.css";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
@@ -9,22 +10,21 @@ import API from "../../util/API";
 
 const Connect = () => {
   const [socialInfo, setSocialInfo] = useState([]);
+  const { isDark } = useContext(ThemeContext);
 
   const getAllS3Icons = useCallback(() => {
     API.getAllConnectIconImageS3Urls()
       .then((res) => {
-        let socialMediaIconImages = getAllImages(res.data.imageUrls);
-        setSocialInfo(socialMediaIconImages);
+        setSocialInfo(getAllImages(res.data.imageUrls, isDark));
       })
       .catch((err) => {
         console.error(err);
         return;
       });
-  }, []);
+  }, [isDark]);
 
   useEffect(() => {
     getAllS3Icons();
-
   }, [getAllS3Icons]);
 
   return (

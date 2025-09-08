@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export const ProjectContext = createContext({
+export const UIContext = createContext({
     isDrawerOpen: true,
     openDrawer: () => {
     },

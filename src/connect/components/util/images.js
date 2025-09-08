@@ -10,7 +10,7 @@ const images = [
     id: 1,
     title: "LinkedIn",
     alt: "LinkedIn",
-    link: "https://www.linkedin.com/in/marlee-g-b27505ab/",
+    link: "https://www.linkedin.com/in/marlee-gerard/",
     msg: "Let's connect!"
   },
   {
@@ -30,29 +30,44 @@ const images = [
 ];
 
 /**
- * Adding src property to all images objects in images array
- * @param {array} s3ImageURLs
+ * Choose best icon URL based on theme.
+ * @param {string[]} s3ImageURLs
+ * @param {boolean} isDark
  */
-const addImageSrc = (s3ImageURLs) => {
-  images.forEach((iconImage) => {
-    const alternateIconName = iconImage.alt.toLowerCase();
-    const altResumeIconName = images[3].alt.toLowerCase();
-
-    if(alternateIconName !== altResumeIconName){
-      iconImage.src = s3ImageURLs.find((url) => url.includes(alternateIconName));
-    }else{
-      // only for resume icon
-      iconImage.src = s3ImageURLs.find((url) => url.includes('doc-icon'));
+const addImageSrc = (s3ImageURLs, isDark) => {
+  const findIcon = (base) => {
+    // explicit -dark/-light variants
+    if (isDark) {
+      const dark = s3ImageURLs.find((u) => u.includes(`${base}-dark`));
+      if (dark) return dark;
+    } else {
+      const light = s3ImageURLs.find((u) => u.includes(`${base}-light`));
+      if (light) return light;
     }
+    // Fallback to plain base match
+    return s3ImageURLs.find((u) => u.includes(base));
+  };
+
+  images.forEach((iconImage) => {
+    const altLower = iconImage.alt.toLowerCase();
+    if (altLower.includes('résumé') || altLower.includes('resume')) {
+      // Resume now uses 'doc-icon' with -dark / -light variants
+      iconImage.src = findIcon('doc-icon');
+      return;
+    }
+    // github/linkedin/twitter
+    const base = altLower;
+    iconImage.src = findIcon(base);
   });
-}
+};
 
 /**
  * Adding S3 image url
  * @param {array} s3ImageURLs 
  * @return {array}
  */
-export const getAllImages = (s3ImageURLs) => {
-  addImageSrc(s3ImageURLs);
-  return images;
+export const getAllImages = (s3ImageURLs, isDark = false) => {
+  addImageSrc(s3ImageURLs, isDark);
+  // Return a fresh array with cloned objects so React sees changes
+  return images.map((img) => ({ ...img }));
 }

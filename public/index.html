@@ -16,19 +16,34 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-     <!-- Bootstrap -->
-     <link
-     rel="stylesheet"
-     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-     crossorigin="anonymous"
-   />
+    <script>
+      (() => {
+        try {
+          const KEY = "theme-preference";
+          const docEl = document.documentElement;
+          const media = window.matchMedia
+            ? window.matchMedia("(prefers-color-scheme: dark)")
+            : null;
 
-   <!-- Animate.css -->
-   <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
-   />
+          const stored = localStorage.getItem(KEY);
+          const mode =
+            stored === "light" || stored === "dark"
+              ? stored
+              : media && media.matches
+              ? "dark"
+              : "light";
+
+          // Set once so first paint is correct; no listeners here.
+          docEl.setAttribute("data-theme", mode);
+        } catch (_) {}
+      })();
+    </script>
+
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.

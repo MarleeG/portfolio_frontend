@@ -1,16 +1,18 @@
-import React, { Fragment, useState, useEffect, useCallback } from "react";
+import React, { Fragment, useState, useEffect, useCallback, useContext } from "react";
 import Alert from "react-bootstrap/Alert";
 
 import MyCard from "../components/my-card";
 import Modal from "../../shared/components/UIElements/Modal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import API from "../../util/API";
+import { ThemeContext } from "../../context/theme-context";
 
 import "./Portfolio.css";
 
 
 let projects = [];
 const Portfolio = (props) => {
+  const { isDark } = useContext(ThemeContext);
   
   const [allProjects, setAllProjects] = useState([]);
   const [modalShow, setModalShow] = useState(false);
@@ -84,8 +86,14 @@ const Portfolio = (props) => {
           <div className="portfolio__right portfolio__column">
             <div className="portfolio__wrapper-right">
             {
-              allProjects.length > 0 && 
-              <Alert className="center animated fadeInRightBig slow-2s" variant="light">Several projects were originally deployed on Heroku. Due to recent platform changes, some live demos may not load, but all source code is available on GitHub.</Alert>
+              allProjects.length > 0 && (
+                <Alert
+                  className="center animated fadeInRightBig slow-2s"
+                  variant={isDark ? "secondary" : "light"}
+                >
+                  Several projects were originally deployed on Heroku. Due to recent platform changes, some live demos may not load, but all source code is available on GitHub.
+                </Alert>
+              )
             }
               {/* This renders projects */}
               <div className="portfolio__projects-list">

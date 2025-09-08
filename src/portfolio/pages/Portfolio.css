@@ -10,6 +10,11 @@
   width: 100vw;
 }
 
+/* Ensure content clears the fixed mobile header */
+@media screen and (max-width: 800px) {
+  .portfolio__container { padding-top: 64px; }
+}
+
 .portfolio__column {
   height: 100%;
   position: relative;
@@ -101,4 +106,3 @@ div.portfolio__left h1 {
     margin-bottom: 80px;
   }
 }
-

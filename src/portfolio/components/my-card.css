@@ -23,11 +23,14 @@
   justify-content: space-between;
 
   margin: 0.5vw 0vw;
-  /* border: 2px solid green; */
-  border: 1px solid  #d9dbdc;
-  border-radius: 4px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+  overflow: hidden; /* clip child corners */
   padding: 0px;
   position: relative;
+  transition: box-shadow 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 img.card__project-img {
@@ -95,6 +98,11 @@ background: linear-gradient(90deg, rgba(241,212,212,0.5032212714187237) 1%, rgba
   position: relative;
 
   /* background: #e3e3e3; */
+}
+
+/* Dark theme: project card inner background for contrast */
+[data-theme="dark"] .item {
+  background: #23262C;
 }
 
 
@@ -215,6 +223,15 @@ span.card__plus-icon:hover {
   border: none;
 }
 
+/* Elevation on hover for non-touch (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .container:hover {
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--card-border-strong);
+    transform: translateY(-1px);
+  }
+}
+
 .container:hover h3 {
   display: block;
 }
@@ -324,4 +341,18 @@ h2.card__secondary_h2 {
   span.card__plus-icon {
     width: 30%;
   }
+}
+
+/* Disable hover effects on touch/mobile but keep cards tappable */
+@media (hover: none), screen and (max-width: 799px) {
+  .container:hover h2.card_primary_h2 { color: black; }
+  .container:hover p.card__description { color: inherit; }
+  .container:hover span.card__span { background-color: #989797; }
+  /* Make overlay always fill card to keep onClick working, but transparent */
+  .overlay { height: 100% !important; background-color: transparent !important; }
+  .container:hover .overlay { height: 100% !important; }
+  .container:hover div.card__border_div { background-color: transparent; }
+  .container:hover h3 { display: none; }
+  .container:hover h2.card__secondary_h2 { display: none; }
+  span.card__plus-icon:hover { transform: none; }
 }

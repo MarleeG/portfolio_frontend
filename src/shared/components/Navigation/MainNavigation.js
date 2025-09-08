@@ -6,6 +6,7 @@ import NavLinks from "./NavLinks";
 import SideDrawer from "./SideDrawer";
 import MobileSideDrawer from "./MobileSideDrawer";
 import Backdrop from "../../../shared/components/UIElements/Backdrop";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 import "./MainNavigation.css";
 
@@ -38,17 +39,17 @@ const MainNavigation = (props) => {
 
   return (
     <Fragment>
-      {drawerIsOpen && <Backdrop onClick={toggleDrawer}/>}
+      {drawerIsOpen && <Backdrop onClick={toggleDrawer} />}
 
-      <SideDrawer
-        className="main-navigation__drawer-nav"
-        show={true}
-      >
+      <SideDrawer className="main-navigation__drawer-nav" show={true}>
         <h1 className="main-navigation__title font-roboto">
           <Link to="/">MARLEE GERARD</Link>
         </h1>
 
         <NavLinks />
+
+        {/* Desktop theme selector inside persistent side drawer */}
+        <ThemeSwitcher className="desktop-drawer-toggle" />
       </SideDrawer>
 
       {/* Mobile Drawer */}
@@ -66,6 +67,9 @@ const MainNavigation = (props) => {
           styles={MobileDrawerStyle.nav.style}
           CNames={MobileDrawerStyle.nav.classNames}
         />
+
+        {/* Mobile theme selector inside open drawer */}
+        <ThemeSwitcher className="mobile-drawer-toggle" />
       </MobileSideDrawer>
 
       <MainHeader>
@@ -74,6 +78,7 @@ const MainNavigation = (props) => {
           <span />
           <span />
         </button>
+        {/* Theme toggle is rendered globally above to appear on desktop too */}
 
         <h1 className="main-navigation__title_in_header font-roboto">
           <Link to="/">Marlee Gerard</Link>
