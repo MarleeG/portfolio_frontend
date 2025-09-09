@@ -1,10 +1,11 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useContext } from "react";
 import { CSSTransition } from "react-transition-group";
 import { Alert } from "react-bootstrap";
 import ReactDOM from "react-dom";
 
 import { randomColorGenerator } from "../util/ui-helper";
 import Backdrop from "./Backdrop";
+import { ThemeContext } from "../../../context/theme-context";
 import Button from "./Button";
 
 import "./Modal.css";
@@ -21,6 +22,7 @@ const ModalOverlay = (props) => {
   } = props.project;
 
   const [color, setColor] = useState("black");
+  const { isDark } = useContext(ThemeContext);
 
   // Hovering State
   // const [isBtnHoverOne, setIsBtnHoverOne] = useState(false);
@@ -67,12 +69,13 @@ const ModalOverlay = (props) => {
   };
 
   const colorGenerator = () => {
-    setColor(randomColorGenerator());
+    setColor(randomColorGenerator(isDark ? "dark" : "light"));
   };
 
   useEffect(() => {
     colorGenerator();
-  }, []);
+    // Regenerate accent if theme changes (e.g., switching system mode)
+  }, [isDark]);
 
   const content = (
     <div

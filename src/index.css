@@ -89,10 +89,21 @@ body {
   }
 }
 
+/* Modern viewport handling so mobile toolbars do not steal height */
 html, body {
+  height: 100%; /* allow body min-height to reference viewport properly */
   background: var(--bg) !important; /* override Bootstrap default */
   color: var(--text);
   transition: background-color 180ms ease, color 180ms ease;
+}
+
+/* Prefer dynamic/large viewport units when supported */
+body { min-height: 100vh; }
+@supports (min-height: 100dvh) {
+  body { min-height: 100dvh; }
+}
+@supports (min-height: 100svh) {
+  body { min-height: 100svh; }
 }
 
 a { color: var(--link); }

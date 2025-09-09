@@ -187,6 +187,30 @@ h1.main-navigation__mobile-title a:active {
   }
 }
 
+/* Safe-area support: keep bottom controls above iOS Safari toolbar */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .desktop-drawer-toggle {
+    bottom: calc(22px + env(safe-area-inset-bottom));
+  }
+  .mobile-drawer-toggle {
+    bottom: calc(17px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Optional sticky bar variant inside the drawer */
+.theme-toggle-bar {
+  position: sticky;
+  bottom: 0;
+  padding: 8px 12px;
+  background: var(--side-bg);
+  border-top: 1px solid var(--border);
+}
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .theme-toggle-bar {
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  }
+}
+
   .ios-toggle {
     width: 58px;
     height: 30px;

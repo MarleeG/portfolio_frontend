@@ -1,15 +1,37 @@
+/* Drawer containers use modern viewport units + safe-area padding */
 .side-drawer,
 .mobile-side-drawer {
   position: fixed;
   left: 0;
   top: 0;
   z-index: 100;
-  height: 100vh;
+  /* Replace 100vh with dynamic viewport units where possible */
+  min-height: 100vh; /* baseline */
   background: var(--side-bg);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   width: 21vw;
   padding: 4% 1% 0 3%;
+  /* Add bottom padding so last row is not hidden behind iOS toolbar */
+  padding-bottom: 16px;
   transition: width 2s;
+}
+
+/* Prefer dynamic/large viewport units when supported */
+@supports (min-height: 100dvh) {
+  .side-drawer,
+  .mobile-side-drawer { min-height: 100dvh; }
+}
+@supports (min-height: 100svh) {
+  .side-drawer,
+  .mobile-side-drawer { min-height: 100svh; }
+}
+
+/* Respect iOS safe-area to keep content above the bottom toolbar */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .side-drawer,
+  .mobile-side-drawer {
+    padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  }
 }
 
 /* Transition classes for CSSTransition classNames="slide-in-left" */
