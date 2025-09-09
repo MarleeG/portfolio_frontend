@@ -115,3 +115,22 @@
     .home__wrapper h1 { font-size: 6.5vw; white-space: nowrap; }
     .home__wrapper p { font-size: 1.8vw; }
 }
+
+/* Ensure the hero fills most of the screen height on small phones
+   while leaving a little room for navigation/toolbars. */
+@media screen and (max-width: 430px) {
+    .home__wrapper {
+        height: auto;               /* allow it to grow if content exceeds */
+        min-height: 80vh;           /* aim to avoid vertical scroll */
+        padding-bottom: 8px;        /* small breathing room */
+    }
+    @supports (min-height: 100dvh) {
+        .home__wrapper { min-height: 80dvh; }
+    }
+    @supports (min-height: 100svh) {
+        .home__wrapper { min-height: 80svh; }
+    }
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+        .home__wrapper { padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
+    }
+}

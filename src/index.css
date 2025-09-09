@@ -95,6 +95,7 @@ html, body {
   background: var(--bg) !important; /* override Bootstrap default */
   color: var(--text);
   transition: background-color 180ms ease, color 180ms ease;
+  overflow-x: hidden; /* prevent subtle horizontal scroll on mobile */
 }
 
 /* Prefer dynamic/large viewport units when supported */
@@ -197,7 +198,17 @@ main {
     /* centers page  */
     margin-left: auto;
     margin-right: auto;
-    /* position: fixed; */
     width: 100%;
+    /* keep content clear of fixed mobile header (4rem) */
+    margin-top: 4rem;
+    height: auto; /* avoid forcing extra scroll from 100vh */
+    min-height: calc(100vh - 4rem);
   }
+  @supports (min-height: 100dvh) {
+    .page { min-height: calc(100dvh - 4rem); }
+  }
+  @supports (min-height: 100svh) {
+    .page { min-height: calc(100svh - 4rem); }
+  }
+  body { padding-bottom: 0; }
 }
