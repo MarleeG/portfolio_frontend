@@ -8,8 +8,8 @@ const MobileSideDrawer = props => {
   const content = (
     <CSSTransition
       in={props.show}
-      timeout={200}
-      classNames="slide-in-left"
+      timeout={320}
+      classNames="slide-in-left-smooth"
       mountOnEnter
       unmountOnExit
     >
